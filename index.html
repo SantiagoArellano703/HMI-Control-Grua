@@ -253,19 +253,31 @@
         <h3>Finales de Carrera</h3>
         <div class="indicator">
             <div id="fc1Indicator" class="indicator-circle inactive"></div>
-            <span>FC1</span>
+            <span style="margin-right: 40px;">FC1</span>
+
+            <div id="M1Indicator" class="indicator-circle inactive"></div>
+            <span>M1 (Arriba)</span>
         </div>
         <div class="indicator">
             <div id="fc2Indicator" class="indicator-circle inactive"></div>
-            <span>FC2</span>
+            <span style="margin-right: 40px;">FC2</span>
+
+            <div id="M2Indicator" class="indicator-circle inactive"></div>
+            <span>M2 (Derecha)</span>
         </div>
         <div class="indicator">
             <div id="fc3Indicator" class="indicator-circle inactive"></div>
-            <span>FC3</span>
+            <span style="margin-right: 40px;">FC3</span>
+
+            <div id="M3Indicator" class="indicator-circle inactive"></div>
+            <span>M3 (Abajo)</span>
         </div>
         <div class="indicator">
             <div id="fc4Indicator" class="indicator-circle inactive"></div>
-            <span>FC4</span>
+            <span style="margin-right: 40px;">FC4</span>
+
+            <div id="M4Indicator" class="indicator-circle inactive"></div>
+            <span>M4 (Izquierda)</span>
         </div>
         <h3>Ciclos</h3>
         <div class="indicator">
@@ -436,6 +448,10 @@
             fc2Indicator.classList.toggle('active', top <= 40);
             fc3Indicator.classList.toggle('active', left <= 120);
             fc4Indicator.classList.toggle('active', left >= 530);
+            M1Indicator.classList.toggle('active', (left <= 120 && currentCycle == 1) || (left >= 530 && currentCycle == 2));
+            M2Indicator.classList.toggle('active', top <= 40 && currentCycle == 1);
+            M3Indicator.classList.toggle('active', (left <= 120 && currentCycle == 2) || (left >= 530 && currentCycle == 1));
+            M4Indicator.classList.toggle('active', top <= 40 && currentCycle == 2);
             cycle1Indicator.classList.toggle('active', currentCycle == 1);
             cycle2Indicator.classList.toggle('active', currentCycle == 2);
         }
